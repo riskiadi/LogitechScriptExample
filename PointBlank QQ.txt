@@ -1,0 +1,15 @@
+function OnEvent(event, arg)
+	OutputLogMessage("event = %s, arg = %d\n", event, arg)
+	if IsKeyLockOn("numlock" )then
+		if (event == "MOUSE_BUTTON_PRESSED" and arg == 1) then
+			Sleep(19)
+			PressKey("3")
+			Sleep(19)
+			ReleaseKey("3")
+			Sleep(19)
+			PressKey("1")
+			Sleep(19)
+			ReleaseKey("1")
+		end
+	end
+end
