@@ -1,5 +1,13 @@
 function OnEvent(event, arg)
-	OutputLogMessage("event = %s, arg = %d\n", event, arg)
+  OutputLogMessage("event = %s, arg = %d\n", event, arg)
+
+  if (event == "PROFILE_ACTIVATED") then
+    EnablePrimaryMouseButtonEvents(true)
+    elseif event == "PROFILE_DEACTIVATED" then
+    ReleaseMouseButton(2) -- to prevent it from being stuck on
+    ReleaseMouseButton(1) -- to prevent it from being stuck on
+  end
+
 	if IsKeyLockOn("numlock" )then
 		if (event == "MOUSE_BUTTON_PRESSED" and arg == 1) then
 			Sleep(19)
